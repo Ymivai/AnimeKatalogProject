@@ -1,0 +1,26 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "02b3110e-aaee-469c-bbf9-f5c83be094b2": {
+      "ProjectGuid": "02b3110e-aaee-469c-bbf9-f5c83be094b2",
+      "DisplayName": "AnimeKatalog.UI",
+      "ColorIndex": 0
+    },
+    "e6b87e9b-3d63-4541-8cca-a8591650d942": {
+      "ProjectGuid": "e6b87e9b-3d63-4541-8cca-a8591650d942",
+      "DisplayName": "AnimeKatalog.DAL",
+      "ColorIndex": 1
+    },
+    "03152df3-371f-4aaa-a384-e178bfa19546": {
+      "ProjectGuid": "03152df3-371f-4aaa-a384-e178bfa19546",
+      "DisplayName": "AnimeKatalog.BLL",
+      "ColorIndex": 2
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    }
+  },
+  "NextColorIndex": 3
+}

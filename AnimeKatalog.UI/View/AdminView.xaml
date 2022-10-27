@@ -1,0 +1,234 @@
+﻿<Window x:Class="AnimeKatalog.UI.View.AdminViewModel"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AnimeKatalog.UI.View"
+        mc:Ignorable="d"
+        Title="AdminViewModel" Height="543" Width="800"
+        DataContext="{Binding Source={StaticResource viewModelLocator}, Path=AdminViewModel}">
+    <Grid>
+        <TabControl>
+            <TabItem Header="Account">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+
+                    <DataGrid Grid.Column="0"
+                  AutoGenerateColumns="True"
+                  Margin="10,10,0,10"
+                  ItemsSource="{Binding Accounts}"
+                  SelectedItem="{Binding SelectAccount}"
+                  ColumnWidth="*"></DataGrid>
+
+                    <StackPanel Grid.Column="1"
+                                Margin="10,10,10,10"
+                                Background="LightCyan">
+                        <Expander Margin="0, 20">
+                            <StackPanel>
+                                <TextBlock>Login</TextBlock>
+                                <TextBox Text="{Binding SelectAccount.Login}"></TextBox>
+                                <TextBlock>Password</TextBlock>
+                                <TextBox Text="{Binding SelectAccount.Password}"></TextBox>
+                                <TextBlock>Image</TextBlock>
+                                <TextBox Text="{Binding SelectAccount.Image}"></TextBox>
+                                <TextBlock>Admin</TextBlock>
+                                <TextBox Text="{Binding SelectAccount.Admin}"></TextBox>
+                            </StackPanel>
+                        </Expander>
+                        <Button Content="Add"
+                                Command="{Binding AddAcoountCommand}"></Button>
+                        <Button Content="Uppdate"
+                                Command="{Binding UppdateAccountCommand}"></Button>
+                        <Button Content="Remove"
+                                Command="{Binding RemoveAccountCommand}"></Button>
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Anime">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <DataGrid Grid.Column="0"
+                  AutoGenerateColumns="True"
+                  Margin="10"
+                  ItemsSource="{Binding Animes}"
+                  SelectedItem="{Binding SelectAnime}"
+                  ColumnWidth="*"></DataGrid>
+
+                    <StackPanel Grid.Column="1"
+                                Margin="10"
+                                Background="LightCyan">
+                        <Expander Margin="0, 20">
+                            <StackPanel>
+                                <TextBlock>Name</TextBlock>
+                                <TextBox Text="{Binding SelectAnime.Name}"></TextBox>
+                                <TextBlock>Star</TextBlock>
+                                <TextBox Text="{Binding SelectAnime.Star}"></TextBox>
+                                <TextBlock>Description</TextBlock>
+                                <TextBox Text="{Binding SelectAnime.Description}"></TextBox>
+                                <TextBlock>ImgURL</TextBlock>
+                                <TextBox Text="{Binding SelectAnime.ImgURL}"></TextBox>
+                                <TextBlock>Year</TextBlock>
+                                <TextBox Text="{Binding SelectAnime.Year}"></TextBox>
+                                <TextBlock>AvtorID</TextBlock>
+                                <ComboBox ItemsSource="{Binding AvtorsName}" SelectedItem="{Binding Avtor}"/>
+                            </StackPanel>
+                        </Expander>
+                        <Button Content="Add"
+                                Command="{Binding AddAnimeCommand}"></Button>
+                        <Button Content="Uppdate"
+                                Command="{Binding UppdateAnimeCommand}"></Button>
+                        <Button Content="Remove"
+                                Command="{Binding RemoveAnimeCommand}"></Button>
+                    </StackPanel>
+
+
+
+
+                </Grid>
+            </TabItem>
+            <TabItem Header="Avtor">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <DataGrid Grid.Column="0"
+                  AutoGenerateColumns="True"
+                  Margin="10"
+                  ItemsSource="{Binding Avtors}"
+                  SelectedItem="{Binding SelectAvtor}"
+                  ColumnWidth="*"></DataGrid>
+
+                    <StackPanel Grid.Column="1"
+                                Margin="10"
+                                Background="LightCyan">
+                        <Expander Margin="0, 20">
+                            <StackPanel>
+                                <TextBlock>Name</TextBlock>
+                                <TextBox Text="{Binding SelectAvtor.Name}"></TextBox>
+                                <TextBlock>FirstName</TextBlock>
+                                <TextBox Text="{Binding SelectAvtor.FirstName}"></TextBox>
+                            </StackPanel>
+                        </Expander>
+                        <Button Content="Add"
+                                Command="{Binding AddAvtorCommand}"></Button>
+                        <Button Content="Uppdate"
+                                Command="{Binding UppdateAvtorCommand}"></Button>
+                        <Button Content="Remove"
+                                Command="{Binding RemoveAvtorCommand}"></Button>
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Character">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <DataGrid Grid.Column="0"
+                  AutoGenerateColumns="True"
+                  Margin="10"
+                  ItemsSource="{Binding Characters}"
+                  SelectedItem="{Binding SelectCharacter}"
+                  ColumnWidth="*"></DataGrid>
+
+                    <StackPanel Grid.Column="1"
+                                Margin="10"
+                                Background="LightCyan">
+                        <Expander Margin="0, 20">
+                            <StackPanel>
+                                <TextBlock>Name</TextBlock>
+                                <TextBox Text="{Binding SelectCharacter.Name}"></TextBox>
+                                <TextBlock>FirstName</TextBlock>
+                                <TextBox Text="{Binding SelectCharacter.FirstName}"></TextBox>
+                                <TextBlock>AnimeID</TextBlock>
+                                <ComboBox ItemsSource="{Binding AnimesName}" SelectedItem="{Binding Anime}"/>
+                            </StackPanel>
+                        </Expander>
+                        <Button Content="Add"
+                                Command="{Binding AddCharacterCommand}"></Button>
+                        <Button Content="Uppdate"
+                                Command="{Binding UppdateCharacterCommand}"></Button>
+                        <Button Content="Remove"
+                                Command="{Binding RemoveCharacterCommand}"></Button>
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Ganre">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <DataGrid Grid.Column="0"
+                  AutoGenerateColumns="True"
+                  Margin="10"
+                  ItemsSource="{Binding Ganres}"
+                  SelectedItem="{Binding SelectGanre}"
+                  ColumnWidth="*"></DataGrid>
+
+                    <StackPanel Grid.Column="1"
+                                Margin="10"
+                                Background="LightCyan">
+                        <Expander Margin="0, 20">
+                            <StackPanel>
+                                <TextBlock>Name</TextBlock>
+                                <TextBox Text="{Binding SelectGanre.Name}"></TextBox>
+                            </StackPanel>
+                        </Expander>
+                        <Button Content="Add"
+                                Command="{Binding AddGanreCommand}"></Button>
+                        <Button Content="Uppdate"
+                                Command="{Binding UppdateGanreCommand}"></Button>
+                        <Button Content="Remove"
+                                Command="{Binding RemoveGanreCommand}"></Button>
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Serie">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <DataGrid Grid.Column="0"
+                  AutoGenerateColumns="True"
+                  Margin="10"
+                  ItemsSource="{Binding Series}"
+                  SelectedItem="{Binding SelectSeries}"
+                  ColumnWidth="*"></DataGrid>
+
+                    <StackPanel Grid.Column="1"
+                                Margin="10"
+                                Background="LightCyan">
+                        <Expander Margin="0, 20">
+                            <StackPanel>
+                                <TextBlock>Name</TextBlock>
+                                <TextBox Text="{Binding SelectSeries.Name}"></TextBox>
+                                <TextBlock>Number</TextBlock>
+                                <TextBox Text="{Binding SelectSeries.Number}"></TextBox>
+                                <TextBlock>UrlVideo</TextBlock>
+                                <TextBox Text="{Binding SelectSeries.URL}"></TextBox>
+                                <TextBlock>AnimeID</TextBlock>
+                                <ComboBox ItemsSource="{Binding AnimesName}" SelectedItem="{Binding Anime}"/>
+                            </StackPanel>
+                        </Expander>
+                        <Button Content="Add"
+                                Command="{Binding AddSerieCommand}"></Button>
+                        <Button Content="Uppdate"
+                                Command="{Binding UppdateSeriesCommand}"></Button>
+                        <Button Content="Remove"
+                                Command="{Binding RemoveSeriesCommand}"></Button>
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>

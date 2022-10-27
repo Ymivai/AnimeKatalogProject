@@ -1,0 +1,160 @@
+﻿<Window x:Class="AnimeKatalog.UI.View.InfoAnimeView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AnimeKatalog.UI.View"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:vm="clr-namespace:AnimeKatalog.UI.ViewModel"
+        mc:Ignorable="d"
+        Title="InfoAnimeView" Height="450" Width="800"
+        DataContext="{Binding Source={StaticResource viewModelLocator}, Path=InfoAnimeModel}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition Width="2*" />
+            </Grid.ColumnDefinitions>
+            <Image
+                Grid.Column="0"
+                Width="200"
+                Height="300"
+                Source="{Binding SelectedAnime.ImgURL}" />
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="2*" />
+                    <RowDefinition Height="8*" />
+
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="4*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock
+                        x:Name="TitleTextBox"
+                        Grid.Column="0"
+                        Padding="5,5,5,5"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        FontSize="20"
+                        FontWeight="Medium"
+                        
+                        Text="{Binding SelectedAnime.Name}"
+                        TextWrapping="Wrap" />
+                </Grid>
+                <Grid Grid.Row="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock
+                        Grid.Column="0"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        FontSize="20"
+                        FontWeight="Bold"
+                        Text="{Resx ResxName=AnimeKatalog.UI.Resourses.Resources,
+                                    Key=Year}" />
+                    <TextBlock
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Text="{Binding SelectedAnime.Year}" />
+                    <TextBlock
+                        Grid.Row="1"
+                        Grid.Column="0"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        FontSize="20"
+                        FontWeight="Bold"
+                        Text="{Resx ResxName=AnimeKatalog.UI.Resourses.Resources,
+                                    Key=Ganre}" />
+                    <TextBlock
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Text="{Binding Ganres}" />
+                    <TextBlock
+                        Grid.Row="2"
+                        Grid.Column="0"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        FontSize="20"
+                        FontWeight="Bold"
+                        Text="{Resx ResxName=AnimeKatalog.UI.Resourses.Resources,
+                                    Key=Avtor}" />
+                    <TextBlock
+                        Grid.Row="2"
+                        Grid.Column="1"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Text="{Binding Avtor}" />
+                    <TextBlock
+                        Grid.Row="3"
+                        Grid.Column="0"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        FontSize="20"
+                        FontWeight="Bold"
+                        Text="{Resx ResxName=AnimeKatalog.UI.Resourses.Resources,
+                                    Key=Rating}" />
+                    <materialDesign:RatingBar
+                        x:Name="BasicRatingBar"
+                        Grid.Row="3"
+                        Grid.Column="1"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        IsEnabled="False"
+                        Value="{Binding SelectedAnime.Star}" />
+                    <TextBlock
+                        Grid.Row="4"
+                        Grid.Column="0"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        FontSize="20"
+                        FontWeight="Bold"
+                        Text="{Resx ResxName=AnimeKatalog.UI.Resourses.Resources,
+                                    Key=Actors}" />
+                    <TextBlock
+                        Grid.Row="4"
+                        Grid.Column="1"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        TextWrapping="Wrap"
+                        Text="{Binding Actors}"/>
+                </Grid>
+            </Grid>
+        </Grid>
+        <TextBox
+            Grid.Row="1"
+            Height="auto"
+            MinWidth="280"
+            MaxWidth="800"
+            MaxHeight="400"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            materialDesign:HintAssist.Hint="О аниме: "
+            AcceptsReturn="True"
+            FontSize="16"
+            FontWeight="Normal"
+            IsReadOnly="True"
+            SpellCheck.IsEnabled="True"
+            Text="{Binding SelectedAnime.Description}"
+            TextWrapping="Wrap"
+            VerticalScrollBarVisibility="Auto" />
+    </Grid>
+</Window>

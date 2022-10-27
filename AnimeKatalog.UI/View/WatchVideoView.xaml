@@ -1,0 +1,32 @@
+﻿<Window x:Class="AnimeKatalog.UI.View.WatchVideoView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AnimeKatalog.UI.View"
+        mc:Ignorable="d"
+        Title="WatchVideoView" Height="450" Width="800"
+        DataContext="{Binding Source={StaticResource viewModelLocator}, Path=WatchVideoViewModel}">
+    <Grid>
+        <DockPanel LastChildFill="False" Margin="202,0,218,394">
+            <Label Height="22" Width="377" Foreground="#D40E0E"
+                   HorizontalContentAlignment="Center" FontSize="16" Content="{Binding SelectedSerie.Name}"/>
+        </DockPanel>
+
+        <DockPanel LastChildFill="False" Margin="0,45,0,53">
+            <MediaElement x:Name="mePlayer" Stretch="None" LoadedBehavior="Manual"
+                          Source="http://hubblesource.stsci.edu/sources/video/clips/details/images/hst_1.mpg" Width="800"/>
+            <Label Name="lblStatus" Content="Not playing..." HorizontalContentAlignment="Center" Margin="5" />
+            <WrapPanel HorizontalAlignment="Center">
+                <Button Name="btnPlay" Click="btnPlay_Click">Play</Button>
+                <Button Name="btnPause" Margin="5,0" Click="btnPause_Click">Pause</Button>
+                <Button Name="btnStop" Click="btnStop_Click">Stop</Button>
+            </WrapPanel>
+        </DockPanel>
+
+        <DockPanel LastChildFill="False" Margin="307,381,335,0">
+            <Button Width="155" Content=""></Button>
+        </DockPanel>
+
+    </Grid>
+</Window>

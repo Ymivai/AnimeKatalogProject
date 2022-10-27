@@ -1,0 +1,12 @@
+E:\source\repos\AnimeKatalog\AnimeKatalog.DAL\bin\Debug\AnimeKatalog.DAL.dll.config
+E:\source\repos\AnimeKatalog\AnimeKatalog.DAL\bin\Debug\AnimeKatalog.DAL.dll
+E:\source\repos\AnimeKatalog\AnimeKatalog.DAL\bin\Debug\AnimeKatalog.DAL.pdb
+E:\source\repos\AnimeKatalog\AnimeKatalog.DAL\bin\Debug\EntityFramework.dll
+E:\source\repos\AnimeKatalog\AnimeKatalog.DAL\bin\Debug\EntityFramework.SqlServer.dll
+E:\source\repos\AnimeKatalog\AnimeKatalog.DAL\bin\Debug\EntityFramework.xml
+E:\source\repos\AnimeKatalog\AnimeKatalog.DAL\bin\Debug\EntityFramework.SqlServer.xml
+E:\source\repos\AnimeKatalog\AnimeKatalog.DAL\obj\Debug\AnimeKatalog.DAL.csproj.AssemblyReference.cache
+E:\source\repos\AnimeKatalog\AnimeKatalog.DAL\obj\Debug\AnimeKatalog.DAL.csproj.CoreCompileInputs.cache
+E:\source\repos\AnimeKatalog\AnimeKatalog.DAL\obj\Debug\AnimeKatalog.DAL.csproj.CopyComplete
+E:\source\repos\AnimeKatalog\AnimeKatalog.DAL\obj\Debug\AnimeKatalog.DAL.dll
+E:\source\repos\AnimeKatalog\AnimeKatalog.DAL\obj\Debug\AnimeKatalog.DAL.pdb
